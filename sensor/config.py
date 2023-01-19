@@ -1,18 +1,19 @@
 import pymongo
-import json
 import pandas as pd
+import json
 from dataclasses import dataclass
-#provide the mongodb localhost url to connect python to mongodb
+# Provide the mongodb localhost url to connect python to mongodb.
 import os
+
 @dataclass
 class EnvironmentVariable:
     mongo_db_url:str = os.getenv("MONGO_DB_URL")
+    aws_access_key_id:str = os.getenv("AWS_ACCESS_KEY_ID")
+    aws_access_secret_key:str = os.getenv("AWS_SECRET_ACCESS_KEY")
 
 
-TARGET_COLUMN_MAPPING = {
-    "pos":1,
-    "neg":0
-}
+
+
 
 env_var = EnvironmentVariable()
 mongo_client = pymongo.MongoClient(env_var.mongo_db_url)
