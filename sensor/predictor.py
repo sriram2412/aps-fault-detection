@@ -64,7 +64,7 @@ class ModelResolver:
             if latest_dir==None:
                 return os.path.join(self.model_registry,f"{0}")
             latest_dir_num = int(os.path.basename(self.get_latest_dir_path()))
-            return os.path.join(self.model_registry,f"{latest_dir_num+1}")
+            return os.path.join(self.model_registry,f"{latest_dir_num+1 }")
         except Exception as e:
             raise e
 
@@ -96,8 +96,7 @@ class ModelResolver:
 
 
 
-class Predictor:
+# class Predictor:
 
-    def __init__(self,model_resolver:ModelResolver):
-        self.model_resolver=model_resolver
-
+#     def __init__(self,model_resolver:ModelResolver):
+#         self.model_resolver=model_resolver

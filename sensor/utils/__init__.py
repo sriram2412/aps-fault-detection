@@ -97,4 +97,3 @@ def load_numpy_array_data(file_path:str)->np.array:
             return np.load(file_obj)
     except Exception as e:
         raise SensorException(e, sys) from e
-
